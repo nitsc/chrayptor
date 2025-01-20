@@ -60,4 +60,50 @@ We firmly believe that everyone has their own human rights.
 ### Zero Knowledge Proofs
 - zk-SNARKs, zk-STARKs
 
+# Using Instructions
+## Install and set Tor
+### Ubuntu based Linux
+```bash
+sudo apt update
+sudo apt install tor
+```
+### Windows
+- Download and Install [Tor Expert Bundle](https://www.torproject.org/download/tor/).
+- Findout the tor.exe, donnot run it.
+
+## Set up the Tor HiddenService
+### Find torrc out
+- Linux: /etc/tor/torrc
+- Windows: C:\Users\<YourUserName>\AppData\Roaming\tor\torrc
+If ther isn't any torrc here, try to build file 'torrc'
+### Edit torrc
+Write this to torrc:
+```torrc
+HiddenServiceDir "D:\\tor-expert-bundle-windows-x86_64-14.0.4\\tor\\hidden_service\\"
+HiddenServicePort 80 127.0.0.1:52000
+ControlPort 9051
+CookieAuthentication 1
+SocksPort 9050
+```
+
+## Restart Tor
+### Linux
+```bash
+sudo systemctl restart tor
+```
+### Windows
+Stop and Restart tor.exe
+
+## Find Host Address
+### Linux
+/path/to/hidden/service/directory/hostname
+### Windows
+path/to/hidden/service/directory/hostname
+
+## Test
+Run torserver.py and cilent.py, enter the hostname(.onion).
+Then you can connect to server.
+Talk in safety and privacy!
+
+
 
