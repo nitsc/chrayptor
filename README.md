@@ -16,7 +16,7 @@ We firmly believe that everyone has their own human rights.
 ## Languages
 - **Rust**: After Python prototyping, rewrite Chrayptor in Rust.
 - **Python**: may retain some Python parts.
-- **Go**: possibly use Chraypt++ for key parts of network concurrency.
+- **Go**: possibly use Chrayptor for key parts of network concurrency.
 ## Algorithms
 ### Symmetric encryption: used to encrypt large amounts of data, fast speeds
 - **AES** (Advanced Encryption Standard): widely used in communication protocols (e.g., TLS) **(implemented)**
