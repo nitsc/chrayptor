@@ -52,8 +52,8 @@ We firmly believe that everyone has their own human rights.
 - **CSPRNG** (Cryptographically Secure Pseudo-Random Number Generator) **(realized)**
 
 ## Communication protocols
-- **TLS**: (Transport Layer Security): implements encrypted transport, authentication **(implemented, but client-side authentication is temporarily disabled because SSL does not trust self-signed certificates)** **Noise Protocol Framework**: (Transport Layer Security).
-- **Noise Protocol Framework**: for modern communication software
+- **TLS**: (Transport Layer Security): implements encrypted transport, authentication **(implemented, but client-side authentication is temporarily disabled because SSL does not trust self-signed certificates)**
+- **Noise Protocol Framework** (Transport Layer Security)： for modern communication software
 - **Tor**: access to the Tor network **(Implemented)**
 - **I2P**: Access to I2P networks.
 
