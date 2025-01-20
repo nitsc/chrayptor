@@ -79,7 +79,7 @@ If ther isn't any torrc here, try to build file 'torrc'
 ### Edit torrc
 Write this to torrc:
 ```torrc
-HiddenServiceDir "D:\\tor-expert-bundle-windows-x86_64-14.0.4\\tor\\hidden_service\\"
+HiddenServiceDir "path\\to\\your\\tor-expert-bundle-windows-x86_64-14.0.4\\tor\\hidden_service\\"
 HiddenServicePort 80 127.0.0.1:52000
 ControlPort 9051
 CookieAuthentication 1
