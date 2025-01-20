@@ -30,32 +30,34 @@ We firmly believe that everyone has their own human rights.
 - **Lattice-based Cryptography**: Lattice-based Cryptography
 - **Code-based Cryptography**: is a post-quantum cryptography approach that uses the difficulties of error-correcting code theory to construct cryptosystems
 
-## Key exchange algorithms
+### Key exchange algorithms
 - **Diffie-Hellman** (DH): used to securely generate shared keys **(canceled because of the high efficiency of the key ECDH and the low quantum security)**
 - **ECDH** (Elliptic Curve Diffie-Hellman): based on elliptic curves, more efficient **(implemented)**
 - **Kyber**: is a lattice-based key exchange protocol that is a candidate for the NIST Post-Quantum Cryptography Standardization Project
 - **Curve25519**: is an elliptic curve for efficient and secure cryptographic protocols, especially in the implementation of public-key cryptography and key exchange protocols **(Implemented)**
 - **CSIDH** (Commutative Supersingular Isogeny Diffie-Hellman) is a post-quantum key exchange protocol based on the homology of supersingular elliptic curves **(canceled, since there is currently no mature CSIDH library)**
 
-## Digital signature algorithms
+### Digital signature algorithms
 - **ECDSA** (Elliptic Curve Digital Signature Algorithm): is a widely used digital signature algorithm based on elliptic curve cryptography (ECC)
 - **SM2**: based on the elliptic curve discrete logarithm puzzle
 - **EdDSA** (Edwards-curve Digital Signature Algorithm): digital signature algorithm based on Edwards curves **(implemented)**
 
-## Hash Algorithm
+### Hash Algorithm
 - **SHA3-512**, **SHA2-512**,: high security, widely used for data integrity verification, signature verification **(Implemented)**
 - **Argon2**: specifically designed to resist brute-force attacks on hardware acceleration such as GPUs and ASICs **(Implemented)**
 - **BLAKE3**: very modern and high performance **(Implemented)**
 - **SM3**: standard for cryptographic hashing algorithms published by the Chinese State Cryptography Bureau **(canceled, as it is not widely used and documented at the moment)**
 
-## Random number generation algorithm
+### Random number generation algorithm
 - **CSPRNG** (Cryptographically Secure Pseudo-Random Number Generator) **(realized)**
 
-## Communication protocols
+### Communication protocols
 - **TLS**: (Transport Layer Security): implements encrypted transport, authentication **(implemented, but client-side authentication is temporarily disabled because SSL does not trust self-signed certificates)**
 - **Noise Protocol Framework** (Transport Layer Security)： for modern communication software
 - **Tor**: access to the Tor network **(Implemented)**
 - **I2P**: Access to I2P networks.
 
-## Zero Knowledge Proofs
+### Zero Knowledge Proofs
 - zk-SNARKs, zk-STARKs
+
+
