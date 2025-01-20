@@ -14,7 +14,7 @@ We firmly believe that everyone has their own human rights.
 
 # Objective Standard
 ## Languages
-- **Rust**: After Python prototyping, rewrite Chrayptor in C++.
+- **Rust**: After Python prototyping, rewrite Chrayptor in Rust.
 - **Python**: may retain some Python parts.
 - **Go**: possibly use Chraypt++ for key parts of network concurrency.
 ## Algorithms
