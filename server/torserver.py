@@ -11,7 +11,7 @@ sys.path.append("/crypt.py")
 from datetime import datetime
 from collections import defaultdict
 from cryptography.hazmat.primitives import serialization
-from crypt import EcdhAesCrypt, Curve25519Sm4, Ed25519, Hasher
+from crypt import EcdhAes, Curve25519Sm4, Ed25519, Hasher
 
 
 # 存储哈希值
@@ -65,7 +65,7 @@ def handle_client(conn, addr):
         print("密钥验证成功")
 
         # 生成服务器的密钥对
-        ea  = EcdhAesCrypt()
+        ea  = EcdhAes()
         server_private_key, server_public_key = ea.generate_ecc_keypair()
         server_cs = Curve25519Sm4()
         server_cs_private_key, server_cs_public_key = server_cs.get_private_key(), server_cs.get_public_key()
@@ -98,7 +98,7 @@ def handle_client(conn, addr):
 
         # 计算共享密钥
         try:
-            ea = EcdhAesCrypt()
+            ea = EcdhAes()
             server_shared_key = ea.generate_shared_key(server_private_key, client_public_key)
             server_cs_shared_key = server_cs.generate_shared_key(client_cs_public_key).hex()
         except Exception as e:
@@ -110,7 +110,7 @@ def handle_client(conn, addr):
             cs = Curve25519Sm4()
             ed = Ed25519()
             hs = Hasher()
-            ea =EcdhAesCrypt()
+            ea =EcdhAes()
             while True:
                 try:
                     data = pickle.loads(conn.recv(1024))
@@ -142,7 +142,7 @@ def handle_client(conn, addr):
             cs = Curve25519Sm4()
             ed = Ed25519()
             hs = Hasher()
-            ea = EcdhAesCrypt()
+            ea = EcdhAes()
             while True:
                 try:
                     response = input("服务端: ")
@@ -227,7 +227,7 @@ def start_server():
     except Exception as e:
         print(f"服务端运行时发生未知错误: {e}")
     finally:
-        if 'server_socket' in locals():
+        if 'conn' in locals():
             conn.close()  # 确保关闭Socket
         print("服务器已关闭.")
 

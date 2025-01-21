@@ -11,7 +11,7 @@ from datetime import datetime
 from collections import defaultdict
 from stem.control import Controller
 from cryptography.hazmat.primitives import serialization
-from crypt import EcdhAesCrypt, Curve25519Sm4, Ed25519, Hasher
+from crypt import EcdhAes, Curve25519Sm4, Ed25519, Hasher
 
 # 存储每个IP的最后一次发送时间
 last_sent = defaultdict(lambda: 0)
@@ -22,7 +22,7 @@ def send_message(client_socket, ea_shared_key, cs_shared_key):
         cs = Curve25519Sm4()
         ed = Ed25519()
         hs = Hasher()
-        ea = EcdhAesCrypt()
+        ea = EcdhAes()
         while True:
             try:
                 message = input("客户端: ")
@@ -86,7 +86,7 @@ def receive_message(client_socket, ea_shared_key, cs_shared_key, server_ed_publi
         cs = Curve25519Sm4()
         ed = Ed25519()
         hs = Hasher()
-        ea = EcdhAesCrypt()
+        ea = EcdhAes()
         while True:
             try:
                 # 接收并反序列化数据
@@ -223,7 +223,7 @@ def start_client():
             return
 
         try:
-            ea = EcdhAesCrypt()
+            ea = EcdhAes()
             # 创建客户端的 EA 密钥对
             client_private_key, client_public_key = ea.generate_ecc_keypair()
 
@@ -266,7 +266,7 @@ def start_client():
 
         try:
             # 计算共享EA密钥和CS密钥
-            ea = EcdhAesCrypt()
+            ea = EcdhAes()
             client_shared_ea_key = ea.generate_shared_key(client_private_key, server_public_key)
             client_shared_cs_key = cilent_cs.generate_shared_key(server_cs_public_key).hex()
         except Exception as e:

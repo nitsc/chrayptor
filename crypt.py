@@ -23,8 +23,8 @@ SALT = b'''09417ec5dd7f3adec25d45122afec72ab7a4fe6d1fa176d318f1310fcbf8af4ade7ac
 
 
 
-class EcdhAesCrypt:
-    def __init__(self):
+class EcdhAes:
+    def __init__(self,):
         pass
 
 
