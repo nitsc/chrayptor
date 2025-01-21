@@ -1,4 +1,4 @@
-A command-line communication software focused on human rights, utilizing advanced algorithms to protect your privacy and security. It’s the international version of Chraypt, with integrated Tor support.# Overview
+# Overview
 ![ChraypTor](https://github.com/user-attachments/assets/4a0bd819-895b-455a-8827-003d51373ecb)
 A command-line communication software focused on human rights, utilizing advanced algorithms to protect your privacy and security. It’s the international version of Chraypt, with integrated Tor support. See https://github.com/nitsc/chraypt for China special edition, Chraypt.
 
