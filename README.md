@@ -8,7 +8,7 @@ We firmly believe that everyone has their own human rights.
 ## Program Dev
 - Developers must adhere to the principles of human rights
 - Prohibit the collection of all information about Chrayptor users.
-- Adhere to Chrayptor's P2P, decentralized, and Tor features.
+- Adhere to Chrayptor's P2P, E2E, decentralized, and Tor features.
 - Adhere to the security and privacy of Chrayptor.
 - Adhere to the principles of high open source and free modification of source code.
 
