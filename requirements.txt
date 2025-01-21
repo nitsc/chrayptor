@@ -1,0 +1,9 @@
+cryptography~=44.0.0
+PySocks~=1.7.1
+stem~=1.8.2
+blake3~=1.0.2
+gmssl~=3.2.2
+argon2-cffi~=21.3.0
+argon2-cffi-bindings~=21.2.0
+gmssl~=3.2.2
+pycryptodome~=3.21.0
