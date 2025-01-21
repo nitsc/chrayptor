@@ -22,6 +22,7 @@ def send_message(client_socket, ea_shared_key, cs_shared_key):
         cs = Curve25519Sm4()
         ed = Ed25519()
         hs = Hasher()
+        ea = EcdhAesCrypt()
         while True:
             try:
                 message = input("客户端: ")
@@ -30,7 +31,7 @@ def send_message(client_socket, ea_shared_key, cs_shared_key):
 
                 # 加密消息
                 try:
-                    encrypted_message = EcdhAesCrypt.encrypt_data(ea_shared_key, message)
+                    encrypted_message = ea.encrypt_data(ea_shared_key, message)
                     encrypted_message = cs.encrypt_ecb(cs_shared_key, encrypted_message)
                 except Exception as e:
                     print(f"消息加密失败: {e}")
@@ -85,6 +86,7 @@ def receive_message(client_socket, ea_shared_key, cs_shared_key, server_ed_publi
         cs = Curve25519Sm4()
         ed = Ed25519()
         hs = Hasher()
+        ea = EcdhAesCrypt()
         while True:
             try:
                 # 接收并反序列化数据
@@ -108,7 +110,7 @@ def receive_message(client_socket, ea_shared_key, cs_shared_key, server_ed_publi
                 # 解密消息
                 try:
                     decrypted_message = cs.decrypt_ecb(cs_shared_key, encrypted_message)
-                    decrypted_message = EcdhAesCrypt.decrypt_data(ea_shared_key, decrypted_message)
+                    decrypted_message = ea.decrypt_data(ea_shared_key, decrypted_message)
                 except Exception as e:
                     print(f"解密消息失败: {e}")
                     continue
@@ -221,8 +223,9 @@ def start_client():
             return
 
         try:
+            ea = EcdhAesCrypt()
             # 创建客户端的 EA 密钥对
-            client_private_key, client_public_key = EcdhAesCrypt.generate_ecc_keypair()
+            client_private_key, client_public_key = ea.generate_ecc_keypair()
 
             # 创建客户端的 CS 密钥对
             cilent_cs = Curve25519Sm4()
@@ -263,7 +266,8 @@ def start_client():
 
         try:
             # 计算共享EA密钥和CS密钥
-            client_shared_ea_key = EcdhAesCrypt.generate_shared_key(client_private_key, server_public_key)
+            ea = EcdhAesCrypt()
+            client_shared_ea_key = ea.generate_shared_key(client_private_key, server_public_key)
             client_shared_cs_key = cilent_cs.generate_shared_key(server_cs_public_key).hex()
         except Exception as e:
             print(f"计算共享密钥时发生错误: {e}")

@@ -74,8 +74,8 @@ sudo apt install tor
 ## Set up the Tor HiddenService
 ### Find torrc out
 - Linux: /etc/tor/torrc
-- Windows: C:\Users\ <YourUserName> \AppData\Roaming\tor\torrc
-- If ther isn't any torrc here, try to build file 'torrc'
+- Windows: C:\Users\<YourUserName>\AppData\Roaming\tor\torrc
+If ther isn't any torrc here, try to build file 'torrc'
 ### Edit torrc
 Write this to torrc:
 ```torrc
@@ -101,9 +101,9 @@ Stop and Restart tor.exe
 path/to/hidden/service/directory/hostname
 
 ## Test
-Run torserver.py and torcilent.py, enter the hostname(.onion).
+Run torserver.py and cilent.py, enter the hostname(.onion).
 Then you can connect to server.
-**Talk in safety and privacy!**
+Talk in safety and privacy!
 
 
 
