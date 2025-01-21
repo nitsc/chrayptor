@@ -101,9 +101,9 @@ Stop and Restart tor.exe
 path/to/hidden/service/directory/hostname
 
 ## Test
-Run torserver.py and cilent.py, enter the hostname(.onion).
+Run torserver.py and torcilent.py, enter the hostname(.onion).
 Then you can connect to server.
-Talk in safety and privacy!
+**Talk in safety and privacy!**
 
 
 
