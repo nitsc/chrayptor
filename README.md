@@ -74,8 +74,8 @@ sudo apt install tor
 ## Set up the Tor HiddenService
 ### Find torrc out
 - Linux: /etc/tor/torrc
-- Windows: C:\Users\<YourUserName>\AppData\Roaming\tor\torrc
-If ther isn't any torrc here, try to build file 'torrc'
+- Windows: C:\Users\ <YourUserName> \AppData\Roaming\tor\torrc
+- If ther isn't any torrc here, try to build file 'torrc'
 ### Edit torrc
 Write this to torrc:
 ```torrc
